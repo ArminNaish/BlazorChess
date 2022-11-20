@@ -1,0 +1,15 @@
+<div class="wrapper">
+    <div class="board">
+        @foreach (var row in Enumerable.Range(0,8))
+        {
+            @foreach (var col in Enumerable.Range(0, 8))
+            {
+                <Square Column=@col Row=@row/>
+            }   
+        }
+    </div>
+</div>
+
+@code
+{
+}

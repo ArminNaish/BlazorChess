@@ -1,0 +1,18 @@
+<div class="@Color">
+     <span>@DisplayText</span>
+</div>
+  
+@code {
+    private readonly string _rows = "87654321";
+    private readonly string _columns = "ABCDEFGH";
+    
+    [Parameter]
+    public int Row { get; set; }
+     
+    [Parameter]
+    public int Column { get; set; }
+    
+    private string Color => Column % 2 == Row % 2 ? "white" : "black";
+    
+    private string DisplayText => $"{_columns[Column]}{_rows[Row]}";
+}
