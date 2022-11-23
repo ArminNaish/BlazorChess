@@ -1,15 +1,15 @@
 <div class="wrapper">
     <div class="board">
-        @foreach (var row in Enumerable.Range(0,8))
+        @foreach (var square in ChessBoard.Squares)
         {
-            @foreach (var col in Enumerable.Range(0, 8))
-            {
-                <Square Column=@col Row=@row/>
-            }   
+            <div class="square @(square.Color == ColorType.Light ? "white" : "black")">
+                <span>@square.Piece.Character</span>
+            </div>
         }
-    </div>
+   </div>
 </div>
 
 @code
 {
+    private Board ChessBoard { get; } = Board.Initialize();
 }
